@@ -31,4 +31,7 @@ describe('Solar', function() {
   it('getAgeOnMars', function() {
     expect(16).toEqual(solar.getAgeOnMars(currentDate));
   });
+  it('getAgeOnJupiter', function() {
+    expect(2).toEqual(solar.getAgeOnJupiter(currentDate));
+  });
 });
