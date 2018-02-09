@@ -1,0 +1,25 @@
+{
+  "name": "galacticagecalculator",
+  "description": "Calculates your age depending on the planets solar year.",
+  "main": "index.html",
+  "authors": [
+    "Byron Chang"
+  ],
+  "license": "UNLICENSED",
+  "keywords": [
+    "JavaScript",
+    "npm",
+    "gulp",
+    "bower",
+    "jasmine",
+    "karma"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
