@@ -54,7 +54,7 @@ export class Solar {
     let currentDateMS = Date.UTC(currentDate.year,currentDate.month,currentDate.day);
     let ageInMS = currentDateMS - dateMS;
     let epoch = Date.UTC(1971);
-    let currentAge = Math.floor(ageInMS/(epoch*1.88));
+    let currentAge = Math.floor(ageInMS/(epoch*11.86));
     return currentAge;
   }
 
