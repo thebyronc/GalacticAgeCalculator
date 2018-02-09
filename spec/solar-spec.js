@@ -29,6 +29,6 @@ describe('Solar', function() {
     expect(51).toEqual(solar.getAgeOnVenus(currentDate));
   });
   it('getAgeOnMars', function() {
-    expect(51).toEqual(solar.getAgeOnMars(currentDate));
+    expect(16).toEqual(solar.getAgeOnMars(currentDate));
   });
 });
