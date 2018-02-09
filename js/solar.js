@@ -33,7 +33,7 @@ export class Solar {
     let ageInMS = currentDateMS - dateMS;
     let epoch = Date.UTC(1971);
     let currentAge = Math.floor(ageInMS/epoch);
-    return currentAge;
+    return Math.floor(currentAge/.24);
   }
   checkError() {
     $(".errorCode").text("Works");
