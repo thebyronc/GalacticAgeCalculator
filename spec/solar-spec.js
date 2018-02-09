@@ -2,8 +2,10 @@ import { Solar } from './../js/solar.js';
 
 describe('Solar', function() {
   let solar;
+  let currentDate;
   beforeEach(function() {
     solar = new Solar(1986, 6, 1);
+    currentDate = new Solar(2018, 1, 9);
   });
 
   it('convertYearToSeconds', function() {
@@ -17,16 +19,16 @@ describe('Solar', function() {
   });
 
   it('getAgeOnEarth', function() {
-    let currentDate = new Solar(2018, 1, 9);
     expect(31).toEqual(solar.getAgeOnEarth(currentDate));
   });
 
   it('getAgeOnMercury', function() {
-    let currentDate = new Solar(2018, 1, 9);
     expect(131).toEqual(solar.getAgeOnMercury(currentDate));
   });
   it('getAgeOnVenus', function() {
-    let currentDate = new Solar(2018, 1, 9);
     expect(51).toEqual(solar.getAgeOnVenus(currentDate));
+  });
+  it('getAgeOnMars', function() {
+    expect(51).toEqual(solar.getAgeOnMars(currentDate));
   });
 });
