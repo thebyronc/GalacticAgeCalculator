@@ -1,6 +1,15 @@
 # Galactic Age Calculator
 Calculates your age depending on the planets solar year.
 
+## Getting Started
+### Console Commands
+Dont enter the "$"
+```
+$ npm install
+$ bower install
+$ ./node_modules/.bin/jasmine init
+```
+
 ## About This Project
 This application is built for a Friday project at Epicodus. Using JavaScript and HTML/CSS in conjunction with npm, gulp, and bower.
 

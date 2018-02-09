@@ -4,7 +4,7 @@
   "description": "Calculates your age depending on the planets solar year.",
   "main": "index.html",
   "scripts": {
-    "test": "npm test"
+    "test": "karma start karma.conf.js"
   },
   "repository": {
     "type": "git",

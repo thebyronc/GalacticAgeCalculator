@@ -32,6 +32,7 @@ var _solar = require('./../js/solar.js');
 $(document).ready(function () {
   var solar = new _solar.Solar();
   solar.checkError();
+  $('#time').text(moment());
 });
 
 },{"./../js/solar.js":1}]},{},[2]);
