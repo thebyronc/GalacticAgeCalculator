@@ -21,7 +21,8 @@ var Solar = exports.Solar = function () {
   _createClass(Solar, [{
     key: "convertYearToSeconds",
     value: function convertYearToSeconds(ageYear) {
-      // let seconds = date.getFullYear() - ageYear;
+      var date = new Date();
+      var seconds = date.getFullYear() - ageYear;
       return seconds;
     }
   }, {

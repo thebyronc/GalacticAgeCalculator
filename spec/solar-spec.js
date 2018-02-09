@@ -5,7 +5,7 @@ describe('Solar', function() {
   beforeEach(function() {
     solar = new Solar(1986, 6, 1);
   });
-  it('checkColumnsForSameNumber', function() {
-    expect(solar.convertYearToSeconds(1)).toEqual(123);
+  it('convertYearToSeconds age 32', function() {
+    expect(1009152000).toEqual(solar.convertYearToSeconds());
   });
 });

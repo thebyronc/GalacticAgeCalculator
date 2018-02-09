@@ -5,9 +5,11 @@ export class Solar {
     this.dayBorn = dayBorn;
   }
 
-  convertYearToSeconds(ageYear) {
-    // let seconds = date.getFullYear() - ageYear;
-    return seconds;
+  convertYearToSeconds() {
+    let date = new Date();
+    let years = date.getFullYear() - this.yearBorn;
+    let seconds = Date.UTC(1971)/1000;
+    return seconds * years;
   }
   checkError() {
     $(".errorCode").text("Works");
