@@ -10,11 +10,21 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Solar = exports.Solar = function () {
-  function Solar() {
+  function Solar(yearBorn, monthBorn, dayBorn) {
     _classCallCheck(this, Solar);
+
+    this.yearBorn = yearBorn;
+    this.monthBorn = monthBorn;
+    this.dayBorn = dayBorn;
   }
 
   _createClass(Solar, [{
+    key: "convertYearToSeconds",
+    value: function convertYearToSeconds(ageYear) {
+      // let seconds = date.getFullYear() - ageYear;
+      return seconds;
+    }
+  }, {
     key: "checkError",
     value: function checkError() {
       $(".errorCode").text("Works");
@@ -32,7 +42,6 @@ var _solar = require('./../js/solar.js');
 $(document).ready(function () {
   var solar = new _solar.Solar();
   solar.checkError();
-  $('#time').text(moment());
 });
 
 },{"./../js/solar.js":1}]},{},[2]);

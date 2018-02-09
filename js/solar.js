@@ -1,9 +1,13 @@
 export class Solar {
-  constructor() {
+  constructor(yearBorn, monthBorn, dayBorn) {
+    this.yearBorn = yearBorn;
+    this.monthBorn = monthBorn;
+    this.dayBorn = dayBorn;
   }
-  convertAgeToSeconds(age) {
-    
-    return 123;
+
+  convertYearToSeconds(ageYear) {
+    // let seconds = date.getFullYear() - ageYear;
+    return seconds;
   }
   checkError() {
     $(".errorCode").text("Works");

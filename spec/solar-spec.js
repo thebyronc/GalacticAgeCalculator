@@ -1,9 +1,11 @@
 import { Solar } from './../js/solar.js';
 
 describe('Solar', function() {
-
+  let solar;
+  beforeEach(function() {
+    solar = new Solar(1986, 6, 1);
+  });
   it('checkColumnsForSameNumber', function() {
-    let solar = new Solar();
-    expect(solar.convertAgeToSeconds(10)).toEqual(123);
+    expect(solar.convertYearToSeconds(1)).toEqual(123);
   });
 });
