@@ -6,9 +6,7 @@ export class Solar {
   }
 
   convertYearToSeconds() {
-    let date = new Date();
-    let years = date.getFullYear() - this.year;
-    let seconds = Date.UTC(1970 + years)/1000;
+    let seconds = Date.UTC(this.year,this.month,this.day)/1000;
     return seconds;
   }
 
@@ -32,8 +30,16 @@ export class Solar {
     let currentDateMS = Date.UTC(currentDate.year,currentDate.month,currentDate.day);
     let ageInMS = currentDateMS - dateMS;
     let epoch = Date.UTC(1971);
-    let currentAge = Math.floor(ageInMS/epoch);
-    return Math.floor(currentAge/.24);
+    let currentAge = Math.floor(ageInMS/(epoch*.24));
+    return currentAge;
+  }
+  getAgeOnVenus(currentDate) {
+    let dateMS = Date.UTC(this.year,this.month,this.day);
+    let currentDateMS = Date.UTC(currentDate.year,currentDate.month,currentDate.day);
+    let ageInMS = currentDateMS - dateMS;
+    let epoch = Date.UTC(1971);
+    let currentAge = Math.floor(ageInMS/(epoch*.62));
+    return currentAge;
   }
   checkError() {
     $(".errorCode").text("Works");

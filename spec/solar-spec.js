@@ -7,7 +7,7 @@ describe('Solar', function() {
   });
 
   it('convertYearToSeconds', function() {
-    expect(1009843200).toEqual(solar.convertYearToSeconds());
+    expect(520560000).toEqual(solar.convertYearToSeconds());
   });
 
   it('compareDates', function() {
@@ -23,6 +23,10 @@ describe('Solar', function() {
 
   it('getAgeOnMercury', function() {
     let currentDate = new Solar(2018, 1, 9);
-    expect(129).toEqual(solar.getAgeOnMercury(currentDate));
+    expect(131).toEqual(solar.getAgeOnMercury(currentDate));
+  });
+  it('getAgeOnVenus', function() {
+    let currentDate = new Solar(2018, 1, 9);
+    expect(51).toEqual(solar.getAgeOnVenus(currentDate));
   });
 });
