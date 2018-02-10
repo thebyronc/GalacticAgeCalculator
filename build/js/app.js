@@ -17,10 +17,10 @@ var Solar = exports.Solar = function () {
     this.month = month;
     this.day = day;
     this.avgEarth = avgLife;
-    this.avgMercury = avgLife * .24;
-    this.avgVenus = avgLife * .62;
-    this.avgMars = avgLife * 1.88;
-    this.avgJupiter = avgLife * 11.86;
+    this.avgMercury = Math.floor(avgLife / .24);
+    this.avgVenus = Math.floor(avgLife / .62);
+    this.avgMars = Math.floor(avgLife / 1.88);
+    this.avgJupiter = Math.floor(avgLife / 11.86);
   }
 
   _createClass(Solar, [{
@@ -135,8 +135,27 @@ $(document).ready(function () {
     var avgLife = parseInt($("#avgLife").val());
     console.log(year);
     var solar = new _solar.Solar(year, month, day, avgLife);
+    if (solar.getAgeOnEarth(currentSolar) > avgLife) {
+      $(".over").show();
+      $("#overAge").text(solar.getAgeOnEarth(currentSolar));
+      $("#getAvgOver").text(solar.getAvgEarth());
+    } else {
+      $(".over").hide();
+    }
     $("#earthAge").text(solar.getAgeOnEarth(currentSolar));
     $("#getAvgEarth").text(solar.getAvgEarth());
+
+    $("#mercuryAge").text(solar.getAgeOnMercury(currentSolar));
+    $("#getAvgMercury").text(solar.getAvgMercury());
+
+    $("#venusAge").text(solar.getAgeOnVenus(currentSolar));
+    $("#getAvgVenus").text(solar.getAvgVenus());
+
+    $("#marsAge").text(solar.getAgeOnMars(currentSolar));
+    $("#getAvgMars").text(solar.getAvgMars());
+
+    $("#jupiterAge").text(solar.getAgeOnJupiter(currentSolar));
+    $("#getAvgJupiter").text(solar.getAvgJupiter());
   });
 });
 

@@ -10,29 +10,30 @@
   <body>
     <div class="container">
       <h1>Galactic Age Calculator</h1>
-
-      <div class="card" style="width: 26rem;">
-
-        <div class="card-body">
-          <form id="userBirthDay">
-            <div class="input-group input-group-sm mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="">Enter Date Of Birth</span>
+      <div class="header">
+        <div class="card" style="width: 26rem; float: none;">
+          <div class="card-body">
+            <form id="userBirthDay">
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="">Enter Date Of Birth</span>
+                </div>
+                <input type="number" class="form-control-sm" id="year" placeholder="1970" maxlength="4">
+                <input type="number" class="form-control-sm" id="month" placeholder="01" maxlength="2">
+                <input type="number" class="form-control-sm" id="day" placeholder="01" maxlength="2">
               </div>
-              <input type="number" class="form-control-sm" id="year" placeholder="1970" maxlength="4">
-              <input type="number" class="form-control-sm" id="month" placeholder="01" maxlength="2">
-              <input type="number" class="form-control-sm" id="day" placeholder="01" maxlength="2">
-            </div>
-            <div class="input-group input-group-sm mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Average Life Expectancy</span>
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">Average Life Expectancy</span>
+                </div>
+                <input type="number" class="form-control-sm" id="avgLife" placeholder="100">
               </div>
-              <input type="number" class="form-control-sm" id="avgLife" placeholder="100">
-            </div>
-            <button type="submit" class="btn btn-primary">Calculate</button>
-          </form>
+              <button type="submit" class="btn btn-primary">Calculate</button>
+            </form>
+          </div>
         </div>
       </div>
+
 
       <div class="card text-white mb-3" style="width: 18rem;">
         <div class="card-body">
@@ -40,17 +41,79 @@
           <img class="card-img-top" src="img/earth.png" alt="Card image cap">
           <h5 class="card-title">Earth</h5>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Your age on Earth: <span id="earthAge"></span></li>
-            <li class="list-group-item">Average life expectancy: <span id="getAvgEarth"></span></li>
+            <li class="list-group-item">Your age on Earth: <span class="output" id="earthAge"></span></li>
+            <li class="list-group-item">Average life expectancy: <span class="output" id="getAvgEarth"></span></li>
             <li class="list-group-item">365 Earth Days in a Year</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card text-white mb-3" style="width: 18rem;">
+        <div class="card-body">
+
+          <img class="card-img-top" src="img/mercury.png" alt="Card image cap">
+          <h5 class="card-title">Mercury</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Your age on Mercury: <span class="output" id="mercuryAge"></span></li>
+            <li class="list-group-item">Average life expectancy: <span class="output" id="getAvgMercury"></span></li>
+            <li class="list-group-item">58 Mercury Days in a Year</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card text-white mb-3" style="width: 18rem;">
+        <div class="card-body">
+
+          <img class="card-img-top" src="img/venus.png" alt="Card image cap">
+          <h5 class="card-title">Venus</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Your age on Venus: <span class="output" id="venusAge"></span></li>
+            <li class="list-group-item">Average life expectancy: <span class="output" id="getAvgVenus"></span></li>
+            <li class="list-group-item">225 Venus Days in a Year</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card text-white mb-3" style="width: 18rem;">
+        <div class="card-body">
+
+          <img class="card-img-top" src="img/mars.png" alt="Card image cap">
+          <h5 class="card-title">Mars</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Your age on Mars: <span class="output" id="marsAge"></span></li>
+            <li class="list-group-item">Average life expectancy: <span class="output" id="getAvgMars"></span></li>
+            <li class="list-group-item">687 Mars Days in a Year</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card text-white mb-3" style="width: 18rem;">
+        <div class="card-body">
+
+          <img class="card-img-top" src="img/jupiter.png" alt="Card image cap">
+          <h5 class="card-title">Jupiter</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Your age on Jupiter: <span class="output" id="jupiterAge"></span></li>
+            <li class="list-group-item">Average life expectancy: <span class="output" id="getAvgJupiter"></span></li>
+            <li class="list-group-item">4,300 Jupiter Days in a Year</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card text-white mb-3 over" style="width: 18rem;">
+        <div class="card-body">
+
+          <img class="card-img-top" src="img/over.gif" >
+          <h5 class="card-title">CONGRATULATIONS</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">At age <span class="output" id="overAge"></span> you have surpassed the average life expectancy of <span class="output" id="getAvgOver"></span>!</li>
           </ul>
         </div>
       </div>
 
     </div>
 
-    <h3 id="time"></h3>
-    <div class="errorCode"></div>
+
 
   </body>
 </html>

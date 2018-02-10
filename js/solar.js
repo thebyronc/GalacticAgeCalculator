@@ -4,10 +4,10 @@ export class Solar {
     this.month = month;
     this.day = day;
     this.avgEarth = avgLife;
-    this.avgMercury = avgLife * .24;
-    this.avgVenus = avgLife * .62;
-    this.avgMars = avgLife * 1.88;
-    this.avgJupiter = avgLife * 11.86;
+    this.avgMercury = Math.floor(avgLife/.24);
+    this.avgVenus = Math.floor(avgLife/.62);
+    this.avgMars = Math.floor(avgLife/1.88);
+    this.avgJupiter = Math.floor(avgLife/11.86);
   }
   getAvgEarth() {
     return this.avgEarth;

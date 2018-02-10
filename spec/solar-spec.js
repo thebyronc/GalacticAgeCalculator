@@ -35,9 +35,9 @@ describe('Solar', function() {
   });
   it('getAverageLifeExptancy', function() {
     expect(100).toEqual(solar.getAvgEarth());
-    expect(24).toEqual(solar.getAvgMercury());
-    expect(62).toEqual(solar.getAvgVenus());
-    expect(188).toEqual(solar.getAvgMars());
-    expect(1186).toEqual(solar.getAvgJupiter());
+    expect(416).toEqual(solar.getAvgMercury());
+    expect(161).toEqual(solar.getAvgVenus());
+    expect(53).toEqual(solar.getAvgMars());
+    expect(8).toEqual(solar.getAvgJupiter());
   });
 });
