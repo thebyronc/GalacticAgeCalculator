@@ -1,10 +1,29 @@
 export class Solar {
-  constructor(year, month, day) {
+  constructor(year, month, day, avgLife) {
     this.year = year;
     this.month = month;
     this.day = day;
+    this.avgEarth = avgLife;
+    this.avgMercury = avgLife * .24;
+    this.avgVenus = avgLife * .62;
+    this.avgMars = avgLife * 1.88;
+    this.avgJupiter = avgLife * 11.86;
   }
-
+  getAvgEarth() {
+    return this.avgEarth;
+  }
+  getAvgMercury() {
+    return this.avgMercury;
+  }
+  getAvgVenus() {
+    return this.avgVenus;
+  }
+  getAvgMars() {
+    return this.avgMars;
+  }
+  getAvgJupiter() {
+    return this.avgJupiter;
+  }
   convertYearToSeconds() {
     let seconds = Date.UTC(this.year,this.month,this.day)/1000;
     return seconds;
@@ -56,9 +75,5 @@ export class Solar {
     let epoch = Date.UTC(1971);
     let currentAge = Math.floor(ageInMS/(epoch*11.86));
     return currentAge;
-  }
-
-  checkError() {
-    $(".errorCode").text("Works");
   }
 }

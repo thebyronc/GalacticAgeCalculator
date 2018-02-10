@@ -1,4 +1,43 @@
 body {
-  background-color: #292929;
-  color: #F2F2F2;
+  background-color: #000000;
+  color: #FFFFFF;
+  background-image: url(../../img/bg.png);
+}
+#year {
+  width: 100px;
+}
+#month {
+  width: 50px;
+}
+#day {
+  width: 50px;
+}
+.btn-primary {
+  background-color: #757AD1;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #8F95FF;
+}
+.card {
+  background-color: rgba(41, 41, 41, .7);
+  margin: 0px 20px 20px 0px;
+  border: none;
+}
+input {
+  background-color: #171717;
+  color: #FFFFFF;
+  border:1px solid #0F0F0F;
+}
+.input-group-text {
+  background-color: #171717;
+  border:1px solid #0F0F0F;
+  color: #FFFFFF;
+}
+.card-title {
+  margin-top: 5px;
+}
+.list-group-item  {
+  background-color:  rgba(41, 41, 41, .7);
+  font-size: 12px;
 }

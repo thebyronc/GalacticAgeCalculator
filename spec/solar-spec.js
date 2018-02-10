@@ -4,8 +4,8 @@ describe('Solar', function() {
   let solar;
   let currentDate;
   beforeEach(function() {
-    solar = new Solar(1986, 6, 1);
-    currentDate = new Solar(2018, 1, 9);
+    solar = new Solar(1986, 6, 1, 100);
+    currentDate = new Solar(2018, 1, 9, 100);
   });
 
   it('convertYearToSeconds', function() {
@@ -21,7 +21,6 @@ describe('Solar', function() {
   it('getAgeOnEarth', function() {
     expect(31).toEqual(solar.getAgeOnEarth(currentDate));
   });
-
   it('getAgeOnMercury', function() {
     expect(131).toEqual(solar.getAgeOnMercury(currentDate));
   });
@@ -33,5 +32,12 @@ describe('Solar', function() {
   });
   it('getAgeOnJupiter', function() {
     expect(2).toEqual(solar.getAgeOnJupiter(currentDate));
+  });
+  it('getAverageLifeExptancy', function() {
+    expect(100).toEqual(solar.getAvgEarth());
+    expect(24).toEqual(solar.getAvgMercury());
+    expect(62).toEqual(solar.getAvgVenus());
+    expect(188).toEqual(solar.getAvgMars());
+    expect(1186).toEqual(solar.getAvgJupiter());
   });
 });

@@ -10,25 +10,108 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Solar = exports.Solar = function () {
-  function Solar(yearBorn, monthBorn, dayBorn) {
+  function Solar(year, month, day, avgLife) {
     _classCallCheck(this, Solar);
 
-    this.yearBorn = yearBorn;
-    this.monthBorn = monthBorn;
-    this.dayBorn = dayBorn;
+    this.year = year;
+    this.month = month;
+    this.day = day;
+    this.avgEarth = avgLife;
+    this.avgMercury = avgLife * .24;
+    this.avgVenus = avgLife * .62;
+    this.avgMars = avgLife * 1.88;
+    this.avgJupiter = avgLife * 11.86;
   }
 
   _createClass(Solar, [{
+    key: "getAvgEarth",
+    value: function getAvgEarth() {
+      return this.avgEarth;
+    }
+  }, {
+    key: "getAvgMercury",
+    value: function getAvgMercury() {
+      return this.avgMercury;
+    }
+  }, {
+    key: "getAvgVenus",
+    value: function getAvgVenus() {
+      return this.avgVenus;
+    }
+  }, {
+    key: "getAvgMars",
+    value: function getAvgMars() {
+      return this.avgMars;
+    }
+  }, {
+    key: "getAvgJupiter",
+    value: function getAvgJupiter() {
+      return this.avgJupiter;
+    }
+  }, {
     key: "convertYearToSeconds",
-    value: function convertYearToSeconds(ageYear) {
-      var date = new Date();
-      var seconds = date.getFullYear() - ageYear;
+    value: function convertYearToSeconds() {
+      var seconds = Date.UTC(this.year, this.month, this.day) / 1000;
       return seconds;
     }
   }, {
-    key: "checkError",
-    value: function checkError() {
-      $(".errorCode").text("Works");
+    key: "compareDates",
+    value: function compareDates(dateA, dateB) {
+      var date = new Date();
+      var dateASeconds = Date.UTC(dateA.year, dateA.month, dateA.day) / 1000;
+      var dateBSeconds = Date.UTC(dateB.year, dateB.month, dateB.day) / 1000;
+
+      return Math.abs(dateASeconds - dateBSeconds);
+    }
+  }, {
+    key: "getAgeOnEarth",
+    value: function getAgeOnEarth(currentDate) {
+      var dateMS = Date.UTC(this.year, this.month, this.day);
+      var currentDateMS = Date.UTC(currentDate.year, currentDate.month, currentDate.day);
+      var ageInMS = currentDateMS - dateMS;
+      var epoch = Date.UTC(1971);
+      var currentAge = Math.floor(ageInMS / epoch);
+      return currentAge;
+    }
+  }, {
+    key: "getAgeOnMercury",
+    value: function getAgeOnMercury(currentDate) {
+      var dateMS = Date.UTC(this.year, this.month, this.day);
+      var currentDateMS = Date.UTC(currentDate.year, currentDate.month, currentDate.day);
+      var ageInMS = currentDateMS - dateMS;
+      var epoch = Date.UTC(1971);
+      var currentAge = Math.floor(ageInMS / (epoch * .24));
+      return currentAge;
+    }
+  }, {
+    key: "getAgeOnVenus",
+    value: function getAgeOnVenus(currentDate) {
+      var dateMS = Date.UTC(this.year, this.month, this.day);
+      var currentDateMS = Date.UTC(currentDate.year, currentDate.month, currentDate.day);
+      var ageInMS = currentDateMS - dateMS;
+      var epoch = Date.UTC(1971);
+      var currentAge = Math.floor(ageInMS / (epoch * .62));
+      return currentAge;
+    }
+  }, {
+    key: "getAgeOnMars",
+    value: function getAgeOnMars(currentDate) {
+      var dateMS = Date.UTC(this.year, this.month, this.day);
+      var currentDateMS = Date.UTC(currentDate.year, currentDate.month, currentDate.day);
+      var ageInMS = currentDateMS - dateMS;
+      var epoch = Date.UTC(1971);
+      var currentAge = Math.floor(ageInMS / (epoch * 1.88));
+      return currentAge;
+    }
+  }, {
+    key: "getAgeOnJupiter",
+    value: function getAgeOnJupiter(currentDate) {
+      var dateMS = Date.UTC(this.year, this.month, this.day);
+      var currentDateMS = Date.UTC(currentDate.year, currentDate.month, currentDate.day);
+      var ageInMS = currentDateMS - dateMS;
+      var epoch = Date.UTC(1971);
+      var currentAge = Math.floor(ageInMS / (epoch * 11.86));
+      return currentAge;
     }
   }]);
 
@@ -36,13 +119,25 @@ var Solar = exports.Solar = function () {
 }();
 
 },{}],2:[function(require,module,exports){
-'use strict';
+"use strict";
 
-var _solar = require('./../js/solar.js');
+var _solar = require("./../js/solar.js");
 
 $(document).ready(function () {
-  var solar = new _solar.Solar();
-  solar.checkError();
+
+  $("#userBirthDay").submit(function (event) {
+    event.preventDefault();
+    var currentDate = new Date();
+    var currentSolar = new _solar.Solar(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate(), 100);
+    var year = parseInt($("#year").val());
+    var month = parseInt($("#month").val()) - 1;
+    var day = parseInt($("#day").val());
+    var avgLife = parseInt($("#avgLife").val());
+    console.log(year);
+    var solar = new _solar.Solar(year, month, day, avgLife);
+    $("#earthAge").text(solar.getAgeOnEarth(currentSolar));
+    $("#getAvgEarth").text(solar.getAvgEarth());
+  });
 });
 
 },{"./../js/solar.js":1}]},{},[2]);
