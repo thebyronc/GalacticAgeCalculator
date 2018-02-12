@@ -12,7 +12,7 @@ $(document).ready(function() {
     let avgLife = parseInt($("#avgLife").val());
     console.log(year);
     let solar = new Solar(year, month, day, avgLife);
-    if(solar.getAgeOnEarth(currentSolar) > avgLife) {
+    if(ageVsLife(currentSolar)) {
       $(".over").show();
       $("#overAge").text(solar.getAgeOnEarth(currentSolar));
       $("#getAvgOver").text(solar.getAvgEarth());

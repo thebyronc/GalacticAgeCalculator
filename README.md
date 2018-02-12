@@ -2,12 +2,14 @@
 Calculates your age depending on the planets solar year.
 
 ## Getting Started
+
 ### Console Commands
 Dont enter the "$"
 ```
+$ git clone https://github.com/thebyronc/GalacticAgeCalculator.git
 $ npm install
 $ bower install
-$ ./node_modules/.bin/jasmine init
+$ gulp serve
 ```
 
 ## About This Project

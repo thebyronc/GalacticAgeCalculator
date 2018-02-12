@@ -36,6 +36,18 @@ export class Solar {
 
     return Math.abs(dateASeconds - dateBSeconds);
   }
+  ageVsLife(currentDate){
+    let dateMS = Date.UTC(this.year,this.month,this.day);
+    let currentDateMS = Date.UTC(currentDate.year,currentDate.month,currentDate.day);
+    let ageInMS = currentDateMS - dateMS;
+    let epoch = Date.UTC(1971);
+    let currentAge = Math.floor(ageInMS/epoch);
+    if( currentAge > this.avgEarth ) {
+      return true;
+    } else {
+      return false;
+    }
+  }
   getAgeOnEarth(currentDate) {
     let dateMS = Date.UTC(this.year,this.month,this.day);
     let currentDateMS = Date.UTC(currentDate.year,currentDate.month,currentDate.day);

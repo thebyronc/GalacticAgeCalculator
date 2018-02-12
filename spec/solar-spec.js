@@ -33,6 +33,9 @@ describe('Solar', function() {
   it('getAgeOnJupiter', function() {
     expect(2).toEqual(solar.getAgeOnJupiter(currentDate));
   });
+  it('ageVsLife_checktoseeifolderthanavglife', function() {
+    expect(false).toEqual(solar.ageVsLife(currentDate));
+  });
   it('getAverageLifeExptancy', function() {
     expect(100).toEqual(solar.getAvgEarth());
     expect(416).toEqual(solar.getAvgMercury());
