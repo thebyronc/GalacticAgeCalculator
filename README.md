@@ -38,4 +38,12 @@ This application is built for a Friday project at Epicodus. Using JavaScript and
 - Return the age of a human in Venus years. (A Venus year is .62 Earth years.)
 - Return the age of a human in Mars years. (A Mars year is 1.88 Earth years.)
 - Return the age of a human in Jupiter years. (A Jupiter year is 11.86 Earth years.)
-- If a user has already surpassed the average life expectancy, your application should account for (and test) this possible outcome as well.
+- Determine how many years a user has left to live on each plane.
+- If a user has already surpassed the average life expectancy, the application will notify them of their accomplishments.
+
+### Future Objectives
+Additional functionality that could be added in the future.
+- Add additional planets for age comparison. (Venus, Saturn, Uranus, and Pluto)
+- Return the date of a user’s next birthday on each planet.
+- Determine the age Keith Richards will be in dog years.
+- Determine the average lifespan of a mayfly.
