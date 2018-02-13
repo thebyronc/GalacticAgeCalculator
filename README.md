@@ -38,5 +38,4 @@ This application is built for a Friday project at Epicodus. Using JavaScript and
 - Return the age of a human in Venus years. (A Venus year is .62 Earth years.)
 - Return the age of a human in Mars years. (A Mars year is 1.88 Earth years.)
 - Return the age of a human in Jupiter years. (A Jupiter year is 11.86 Earth years.)
-- Determine how many years a user has left to live on each planet… (yikes!) To do this, the application will have to calculate the user’s life expectancy. You can determine average life expectancy as you see fit; for example, a user could input average life expectancy on their own or you could have a dropdown option for users to choose a country and then the life expectancy would be determined based on the average for that country.
 - If a user has already surpassed the average life expectancy, your application should account for (and test) this possible outcome as well.
